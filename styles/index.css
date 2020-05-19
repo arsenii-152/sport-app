@@ -1,0 +1,276 @@
+@import 'reset.css';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap');
+
+* {
+    box-sizing: border-box;
+    user-select: none;
+}
+canvas {
+  transform: translateY(-1920px);
+  position: absolute;
+  display: block;
+  z-index: -1000;
+}
+#bar {
+    width: 200vw;
+    transition: 1000ms all linear;
+    background-color: #2BFF59;
+}
+
+#timer {
+    position: absolute;
+    margin: auto;
+    font-size: 30vw;
+    font-weight: 900;
+    -webkit-text-stroke: 1.5px #00A725;
+    -webkit-text-fill-color: #2BFF59;
+    z-index: 10;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+    overflow: hidden;
+    background-color: #FF7D7D;
+}
+
+body.is-flexible {
+    overflow: auto;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column;
+    min-height: 100vh;
+    padding: 24px 56px 40px 32px;
+    position: relative;
+}
+
+.content.is-index {
+    display: block;
+}
+
+h1 {
+    font-weight: 900;
+    font-size: 88px;
+    line-height: 1.1;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    -webkit-text-stroke: 1.5px #9D0000;
+    color: #FF7D7D;
+    padding-bottom: 40px;
+    padding-top: 16px;
+}
+
+.is-right {
+    position: absolute;
+    right: 32px;
+}
+
+.is-bottom {
+    position: absolute;
+    bottom: 0;
+}
+
+h2 {
+    font-size: 30px;
+    line-height: 1.2;
+    padding-bottom: 48px;
+    font-weight: 500;
+    -webkit-text-fill-color: #9D0000;
+}
+
+h2 span:last-child {
+    padding-left: 48px;
+}
+
+h2 a {
+    color: inherit;
+}
+
+h2 a:hover {
+    color: red;
+}
+
+h3 {
+    font-size: 22px;
+    line-height: 1.4;
+    padding-bottom: 16px;
+    font-weight: 500;
+    color: #9D0000;
+}
+
+p {
+    padding-bottom: 24px;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 1.4;
+    color: #9D0000;
+}
+
+ul {
+    list-style: circle inside;
+    padding-left: 8px;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+li {
+    line-height: 1.4;
+    padding-bottom: 16px;
+    color: #9D0000;
+}
+
+.btn {
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 1;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 16px 24px;
+    color: #9D0000;
+    border: 1px solid #9D0000;
+    border-radius: 42px;
+    text-decoration: none;
+    position: fixed;
+    bottom: 40px;
+    left: 32px;
+    cursor: default;
+}
+
+.btn.is-right {
+    left: unset;
+    right: 56px;
+}
+
+.btn:hover {
+    color: red;
+    border: 1px solid red;
+}
+
+.info {
+    border: 1px solid #9D0000;
+    padding: 24px 96px 24px 16px;
+    display: inline-flex;
+    flex-flow: column;
+    background: #FF7D7D;
+    box-shadow: 16px 16px rgba(0, 0, 0, 0.1);
+    max-width: 960px;
+    overflow: scroll;
+}
+
+.progress-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+#canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+@media (max-width: 996px) {
+  h1 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 120%;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    padding-bottom: 40px;
+    padding-top: 16px;
+  }
+  h2 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 120%;
+  }
+
+}
+@media (max-width: 617px) {
+  h1 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 140%;
+    text-align: center;
+/* or 53px */
+
+    text-align: center;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    padding-bottom: 40px;
+    padding-top: 16px;
+  }
+  h2 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 120%;
+    text-align: center;
+  }
+  .btn {
+      font-weight: bold;
+      font-size: 28px;
+      line-height: 1;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin: 0 45px 0 45px;
+      padding: 16px 24px;
+      color: #000000;
+      border: 1px solid black;
+      border-radius: 42px;
+      text-decoration: none;
+      position: fixed;
+      bottom: 40px;
+      left: 32px;
+      background: white;
+      cursor: default;
+  }
+  p {
+      padding-bottom: 16px;
+      font-weight: 300;
+      font-size: 22px;
+      line-height: 1.4;
+      text-align: center;
+      color: #9D0000;
+  }
+  h3 {
+      font-size: 16px;
+      line-height: 1.4;
+      padding-bottom: 16px;
+      font-weight: 500;
+      text-align: center;
+      color: #9D0000;
+  }
+  .info {
+      border: 1px solid #000000;
+      padding: 24px 16px 24px 16px;
+      display: inline-flex;
+      flex-flow: column;
+      background: white;
+      box-shadow: 16px 16px rgba(0, 0, 0, 0.1);
+      max-width: 960px;
+      overflow: scroll;
+  }
+  .content {
+      display: flex;
+      justify-content: space-between;
+      flex-flow: column;
+      min-height: 100vh;
+      padding: 24px 20px 40px 20px;
+      position: relative;
+  }
+
+}
